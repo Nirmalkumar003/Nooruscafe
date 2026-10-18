@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Noorus Cafe</title>
+    <meta name="claude:viewport-fit-sides" content="cover">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top">
+        <div class="wrap">
+            <a class="brand" href="#top">Noorus Cafe</a>
+            <nav class="nav" aria-label="Main">
+                <a href="#menu">Menu</a>
+                <a href="#visit">Find us</a>
+                <button class="cartbtn" id="openCart" type="button" aria-haspopup="dialog">
+                    Your order <span class="count mono" id="cartCount">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="wrap hero">
+            <div>
+                <div class="eyebrow">Simple cafe &middot; Velachery, Chennai</div>
+                <h1 style="margin-top:14px">Chai, coffee, fresh juice and snacks <em> with chai</em> rush.</h1>
+                <p class="lead">Small-batch coffee, fresh juice squeezed to order, and bites from our kitchen. Pick your
+                    items below and place your order for dine-in or takeaway.</p>
+                <div class="cta">
+                    <a class="btn" href="#menu">See the menu</a>
+                    <a class="btn ghost" href="#visit">Find us</a>
+                </div>
+                <div class="facts">
+                    <span class="open-pill" id="openPill"><i></i><span id="openText">Open today</span></span>
+                    <span><b>12 am&ndash;12 pm</b> daily</span>
+                </div>
+            </div>
+            <aside class="board" aria-label="Today's board">
+                <h2>Today's board</h2>
+                <div class="sub">Most ordered this week</div>
+                <ul id="boardList"></ul>
+                <p class="note">Prices in rupees. Juices are made fresh, no added sugar.</p>
+            </aside>
+        </section>
+
+
+        <section class="wrap menu" id="menu">
+            <div class="menu-head">
+                <div>
+                    <div class="eyebrow">Menu &middot; <span id="itemTotal">0</span> items</div>
+                    <h2 style="margin-top:8px">What are you having?</h2>
+                </div>
+                <label class="vegtoggle" for="vegOnly"><input type="checkbox" id="vegOnly"> Vegetarian only</label>
+            </div>
+            <div class="chips" id="chips" role="group" aria-label="Menu categories"></div>
+            <div id="menuList"></div>
+        </section>
+    </main>
+
+    <section class="visit" id="visit">
+        <div class="wrap">
+            <div>
+                <div class="eyebrow">Find us</div>
+                <h2 style="margin-top:8px">"Meet me opposite the Vijayanagar bus stand."</h2>
+                <p class="addr" id="addrText">Sarathy Nagar, Velachery, Chennai, Tamil Nadu 600042</p>
+                <p class="addr-sub">Sample address for this demo. Street parking out front.</p>
+                <div class="row-actions">
+                    <a class="btn" id="dirLink"
+                        href=https://www.google.com/maps/place/Noorus+Fresh+Juice/@12.9754905,80.221191,17z/data=!4m14!1m7!3m6!1s0x3a525d9a8305e6af:0x9f4a259e8f4aeb68!2sNoorus+Fresh+Juice!8m2!3d12.9754905!4d80.221191!16s%2Fg%2F11x70zwt9k!3m5!1s0x3a525d9a8305e6af:0x9f4a259e8f4aeb68!8m2!3d12.9754905!4d80.221191!16s%2Fg%2F11x70zwt9k?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D
+                        rel="noopener">Get directions</a>
+                    <button class="btn ghost" id="copyAddr" type="button">Copy address</button>
+                </div>
+                <table class="hours" aria-label="Opening hours" id="hoursTable"></table>
+                <p class="phone">Phone: <span class="mono">+91 98400 00000</span> (sample number)</p>
+            </div>
+            <div class="mapbox">
+                <svg viewBox="0 0 400 300" role="img"
+                    aria-label="Sketch map showing the cafe two blocks from the beach">
+                    <rect class="map-land" width="400" height="300" />
+                    <path class="map-sea" d="M310 0 H400 V300 H290 C320 230 300 150 330 90 C340 60 320 30 310 0 Z" />
+                    <path class="map-road2" stroke-width="3" d="M0 70 H300" />
+                    <path class="map-road2" stroke-width="3" d="M0 220 H300" />
+                    <path class="map-road2" stroke-width="3" d="M70 0 V300" />
+                    <path class="map-road2" stroke-width="3" d="M220 0 V300" />
+                    <path class="map-road" stroke-width="7" d="M0 150 H305" />
+                    <path class="map-road" stroke-width="7" d="M150 0 V300" />
+                    <circle cx="150" cy="150" r="22" fill="#e9a23b" opacity="0.25" />
+                    <path d="M150 160 C140 146 134 140 134 131 A16 16 0 1 1 166 131 C166 140 160 146 150 160 Z"
+                        fill="#e9a23b" />
+                    <circle cx="150" cy="131" r="6" fill="#123d2f" />
+                    <text class="map-label" x="162" y="172">FILTER &amp; FIG</text>
+                    <text class="map-label" x="8" y="142">3RD MAIN ROAD</text>
+                    <text class="map-label" x="326" y="170">BEACH</text>
+                </svg>
+                <div class="mapnote">Sketch only, not to scale.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="wrap">
+        <span>&copy; Filter &amp; Fig. Demo website with sample menu and prices.</span>
+        <span>Prices include no taxes unless stated at checkout.</span>
+    </footer>
+
+    <div class="bar" id="bar"><button type="button" id="barBtn"><span id="barText">0 items</span><span>View order
+                &rarr;</span></button></div>
+
+    <div id="layer" hidden>
+        <div class="scrim" id="scrim"></div>
+        <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+            <div class="drawer-head">
+                <h2 id="drawerTitle">Your order</h2>
+                <button class="iconbtn" id="closeCart" type="button" aria-label="Close order panel">&times;</button>
+            </div>
+            <div class="drawer-body" id="drawerBody"></div>
+            <div class="drawer-foot" id="drawerFoot"></div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
